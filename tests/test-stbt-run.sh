@@ -205,6 +205,6 @@ test_that_stbt_run_can_print_exceptions_with_unicode_characters() {
 	assert False, u"ü"
 	EOF
     stbt run test.py
-    grep -q "FAIL: test.py: AssertionError: ü" log || fail
-    grep -q 'assert False, u"ü"' log || fail
+    grep "FAIL: test.py: AssertionError: ü" log &>/dev/null || fail
+    grep 'assert False, u"ü"' log &>/dev/null || fail
 }
