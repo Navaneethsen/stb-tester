@@ -20,6 +20,12 @@ UNRELEASED.
 
 ##### Breaking changes since 22
 
+* `stbt run` will no longer fail if your test script raises an exception with
+  unicode characters in the exception's message. If you were previously working
+  around this by calling ``encode`` (for example: `raise
+  RuntimeError(u"ünicode".encode("utf-8"))` or `assert False,
+  u"ünicode".encode("utf-8")`) then you will need to remove the `.encode(...)`.
+
 ##### User-visible changes since 22
 
 * There is new structured logging/tracing infrastructure allowing monitoring

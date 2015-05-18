@@ -198,3 +198,13 @@ test_that_stbt_run_tracing_is_written_to_socket() {
     grep -q "state_change" "trace.jsonl" || fail "state_change not written"
     diff expected_states <(state_printer <"trace.jsonl") || fail "Wrong states"
 }
+
+test_that_stbt_run_can_print_exceptions_with_unicode_characters() {
+    cat > test.py <<-EOF
+	# coding: utf-8
+	assert False, u"ü"
+	EOF
+    stbt run test.py
+    grep -q "FAIL: test.py: AssertionError: ü" log || fail
+    grep -q 'assert False, u"ü"' log || fail
+}
