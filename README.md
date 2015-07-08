@@ -9,11 +9,34 @@ Automated User Interface Testing for Set-Top Boxes & Smart TVs
     <img src="https://travis-ci.org/stb-tester/stb-tester.png?branch=master">
   </a>
 
-For commercial support and turn-key test automation appliances see
+**For commercial support and turn-key test automation appliances** see
 [Stb-tester.com].
 
-For community-supported documentation and mailing list see our [wiki], in
+**For community-supported documentation and mailing list** see our [wiki], in
 particular [Getting Started].
+
+------------------------------------------------------------------------------
+
+**Documentation for maintainers**
+
+To make a release:
+
+* `make check enable_stbt_camera=yes`
+* Update docs/release-notes.md
+* `git tag -a vXX && git push vXX`
+* Package Fedora release:
+
+        extra/fedora/fedora-shell.sh -c "make srpm; sudo make rpm"
+        extra/fedora/test-rpm.sh stb-tester-$version-1.fc20.x86_64.rpm
+        extra/fedora/copr-publish.sh stb-tester-$version-1.fc20.src.rpm
+
+* Package Ubuntu release:
+
+        make deb
+        make check-ubuntu
+        make ppa-publish
+
+* Announce on <http://stb-tester.com/blog> and twitter.
 
 
 [Stb-tester.com]: http://stb-tester.com
