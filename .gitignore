@@ -9,6 +9,7 @@
 .stbt-prefix
 debian-packages
 defaults.conf
+docs/stbt.1
 extra/fedora/stb-tester.spec
 extra/stb-tester*.debian.tar.xz
 extra/vm/.vagrant
@@ -19,7 +20,6 @@ stb-tester-*.tar.gz
 stb-tester_*.deb
 stbt-controlc
 stbt-debug
-stbt.1
 stbt.sh
 TAGS
 tests/ocr/menu.png
