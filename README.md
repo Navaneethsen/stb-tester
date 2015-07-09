@@ -15,6 +15,10 @@ Automated User Interface Testing for Set-Top Boxes & Smart TVs
 **For community-supported documentation and mailing list** see our [wiki], in
 particular [Getting Started].
 
+**[Python API documentation]**.
+
+**Command-line documentation:** [stbt(1) man page].
+
 ------------------------------------------------------------------------------
 
 **Documentation for maintainers**
@@ -43,3 +47,5 @@ To make a release:
 [LICENSE]: https://github.com/stb-tester/stb-tester/blob/master/LICENSE
 [wiki]: https://github.com/stb-tester/stb-tester/wiki
 [Getting Started]: https://github.com/stb-tester/stb-tester/wiki/Getting-started-with-stb-tester
+[stbt(1) man page]: https://github.com/stb-tester/stb-tester/blob/master/docs/stbt.1.rst
+[Python API documentation]: http://stb-tester.com/stb-tester-one/rev2015.1/python-api
